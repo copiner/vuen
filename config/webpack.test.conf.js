@@ -5,6 +5,8 @@ const { VueLoaderPlugin } = require('vue-loader/dist/index')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
 const env = require('./test');
 
 module.exports = {
@@ -12,9 +14,9 @@ module.exports = {
     mode: 'production',
     devtool: 'source-map',
     output: {
-        filename: 'js/[name].bundle.js',
+        filename: './js/[name].bundle.js',
         path: path.join(__dirname, '../dist'),
-        publicPath: '/smkPublicH5/'
+        publicPath: env.ASSERT_PATH
     },
     module: {
         rules: [
@@ -76,10 +78,11 @@ module.exports = {
           favicon: path.resolve(__dirname, '../public/favicon.ico')
         }),
         new MiniCssExtractPlugin({
-          filename: "css/[name][chunkhash].css",
-          chunkFilename: "css/[id][chunkhash].css"
+          filename: "./css/[name][chunkhash].css",
+          chunkFilename: "./css/[id][chunkhash].css"
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        // new BundleAnalyzerPlugin()
     ],
     // resolve: {
     //     alias: {

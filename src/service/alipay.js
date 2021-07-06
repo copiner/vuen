@@ -5,7 +5,7 @@ import Util from '../assets/js/util';
 import Service from './index'
 import API from './api'
 
-let openapi = process.env.ENV == "production" ? "https://abs" : "http://vba/gateway";
+let openapi = process.env.ENV == "production" ? "https://xxx/xxx" : "http://xxx/xxx";
 let appId = process.env.ENV == "production" ? "" : "3070529067680";
 let openId = process.env.ENV == "production" ? "" : "3070529067680";
 export default {

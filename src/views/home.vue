@@ -1,5 +1,5 @@
 <template>
-    <div class="home-content" @click="alipay">
+    <div class="home-content">
       公共服务
     </div>
 </template>
@@ -24,5 +24,6 @@ export default {
 <style scoped>
 .home-content {
   font-size:16px;
+  text-align:center;
 }
 </style>

@@ -22,8 +22,4 @@ export default {
 </script>
 <style scoped>
 
-
-  .layout{
-
-  }
 </style>

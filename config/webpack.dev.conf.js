@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { VueLoaderPlugin } = require('vue-loader/dist/index')
 const Webpack = require('webpack')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
@@ -14,8 +15,8 @@ module.exports = {
   entry: path.resolve(__dirname, '../src/main.js'),
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: 'js/[name].js',
-    publicPath: '/smkPublicH5/'
+    filename: 'bundle.js',
+    publicPath: env.ASSERT_PATH
   },
   module: {
     rules: [
@@ -36,7 +37,6 @@ module.exports = {
         options: {
           limit: 8*1024,
           esModule: false, //think serious
-          outputPath: "/imgs"
         }
       },
       {
@@ -74,7 +74,8 @@ module.exports = {
     new VueLoaderPlugin(),
     new Webpack.HotModuleReplacementPlugin(),
     new CleanWebpackPlugin(),
-    new Webpack.NoEmitOnErrorsPlugin()
+    new Webpack.NoEmitOnErrorsPlugin(),
+    //new BundleAnalyzerPlugin()
   ],
   target: "web",//bug
   devServer: {
