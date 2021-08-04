@@ -12,6 +12,7 @@ console.log(process.env.NODE_ENV)
 
 module.exports = {
   mode: 'development',
+  devtool: 'inline-source-map',
   entry: path.resolve(__dirname, '../src/main.js'),
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -63,7 +64,9 @@ module.exports = {
   plugins: [
     new Webpack.DefinePlugin({
      // 'SERVICE_URL': JSON.stringify("api"),
-     'process.env': env
+     'process.env': env,
+     '__VUE_OPTIONS_API__': true,
+     '__VUE_PROD_DEVTOOLS__': false
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public/index.html'),
@@ -83,7 +86,7 @@ module.exports = {
     // compress: true,
     publicPath: '/',
     historyApiFallback: true,
-    host:"192.168.1.123",
+    host:"192.168.1.79",
     port: 8000,
     hot: true,
     proxy: {

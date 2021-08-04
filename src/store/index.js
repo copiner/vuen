@@ -28,6 +28,3 @@ export default createStore({
   // store的下级store 方便大型项目复杂数据管理，这里面相当于可以在放置一个和外面这些一样的模块
   modules: {},
 });
-————————————————
-版权声明：本文为CSDN博主「SubStar」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/SubStar/article/details/116077737

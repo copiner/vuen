@@ -6,6 +6,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 const layout = ()=> import('../views/layout.vue');
 const home = () => import('../views/home.vue');
 const alipay = () => import('../views/alipay/alipay.vue');
+const auth = () => import('../views/auth/auth.vue');
 const routes = [
   {
         path: '/',
@@ -24,6 +25,12 @@ const routes = [
             name: 'alipay',
             component: alipay,
             meta: {title: '公共服务'}
+          },
+          {
+            path: '/auth',
+            name: 'auth',
+            component: auth,
+            meta: {title: '权限管理'}
           }
         ]
       },
