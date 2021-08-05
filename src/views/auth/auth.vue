@@ -1,7 +1,11 @@
 <template>
     <div class="auth-content">
+    <div class="pr">
       <div v-bgcolor="'yellow'">color this text bright yellow</div>
-      <button v-btncolor>color this text bright yellow</button>
+    </div>
+    <button v-btncolor="'1'">ABC</button>
+    <button v-btncolor="'1'">DEF</button>
+    <button v-btncolor="'-1'">GHI</button>
     </div>
 </template>
 
@@ -30,6 +34,16 @@ export default {
         btncolor: {
              beforeMount: function(el, binding) {
                 el.style.background = "#" + Math.random().toString(16).slice(2,8);
+
+            },
+            mounted:function(el, binding){
+              console.log(binding.value)
+              if(binding.value === '-1'){
+                {el.remove()}
+              }
+              //console.log(el.parentNode)
+              //el.remove()
+              //el.parentNode && el.parentNode.removeChild(el);
             }
         }
     }

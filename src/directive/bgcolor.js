@@ -17,7 +17,8 @@ export default function(app){
 
   app.directive('bgcolor', {
       beforeMount: function(el, binding, vnode) {
-          el.style.background = binding.value
+          el.style.background = binding.value;
+          //el.parentNode && el.parentNode.removeChild(el);
       }
   })
 
