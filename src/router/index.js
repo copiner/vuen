@@ -3,41 +3,31 @@ import { createRouter, createWebHashHistory } from "vue-router";
 
 // 懒加载，需要webpack里的插件dynamic-import-webpack配置动态import，以后的es几也会写入
 
-const layout = ()=> import('../views/layout.vue');
 const home = () => import('../views/home.vue');
 const alipay = () => import('../views/alipay/alipay.vue');
 const auth = () => import('../views/auth/auth.vue');
-const routes = [
-  {
-        path: '/',
-        redirect: '/index',
-        component:layout,
-        meta: {title: '公共服务'},
-        children:[
-          {
-            path: '/index',
-            name: 'home',
-            component: home,
-            meta: {title: '公共服务'}
-          },
-          {
-            path: '/alipay',
-            name: 'alipay',
-            component: alipay,
-            meta: {title: '公共服务'}
-          },
-          {
-            path: '/auth',
-            name: 'auth',
-            component: auth,
-            meta: {title: '权限管理'}
-          }
-        ]
-      },
+export const routes = [
+    {
+      path: '/',
+      name: 'home',
+      component: home,
+      meta: {title: '公共服务'}
+    },
+    {
+      path: '/alipay',
+      name: 'alipay',
+      component: alipay,
+      meta: {title: '公共服务'}
+    },
+    {
+      path: '/auth',
+      name: 'auth',
+      component: auth,
+      meta: {title: '权限管理',keepAlive: true}
+    }
 ]
 
-const router = createRouter({
+export const router = createRouter({
   history: createWebHashHistory(),
   routes,
 });
-export default router;

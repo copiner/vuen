@@ -1,15 +1,27 @@
 <template>
     <div class="home-content">
-      公共服务
+      <router-link
+        v-for="item in routes"
+        v-bind:to=item.path
+        v-bind:key="item.id">
+        {{ item.meta.title+'/' }}
+      </router-link>
     </div>
 </template>
 
 <script>
+import { routes } from '../router'
 
 export default {
-    name: 'app',
+    name: 'home',
+    data () {
+        return {
+          routes:routes
+        }
+    },
     mounted(){
-      console.log(this.$router)
+      //console.log(this.$router)
+      console.log(this.routes)
     },
     created(){
 

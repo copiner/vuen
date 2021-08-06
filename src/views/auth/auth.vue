@@ -22,10 +22,13 @@ export default {
         }
     },
     mounted(){
-
+      console.log('mounted')
     },
     created(){
-
+      console.log('created')
+    },
+    activated(){
+      console.log('activated')
     },
     methods:{
 
