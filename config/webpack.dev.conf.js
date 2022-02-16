@@ -86,8 +86,8 @@ module.exports = {
     // compress: true,
     publicPath: '/',
     historyApiFallback: true,
-    host:"192.168.1.79",
-    port: 8000,
+    host:"127.0.0.1",
+    port: 9000,
     hot: true,
     proxy: {
      '/api': {

@@ -1,7 +1,7 @@
 {
-  "name": "smkpublich5",
+  "name": "publich5",
   "version": "1.0.0",
-  "description": "smkpublich5",
+  "description": "publich5",
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
@@ -42,7 +42,7 @@
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1",
     "vue-loader": "^16.2.0",
-    "webpack": "^5.39.0",
+    "webpack": "^5.49.0",
     "webpack-bundle-analyzer": "^3.5.2",
     "webpack-cli": "^4.4.0",
     "webpack-dev-server": "^3.11.2",

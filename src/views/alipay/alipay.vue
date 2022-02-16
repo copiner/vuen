@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import AlipayServer from '../../service/alipay';
+import AlipayServer from '../../api/alipay';
 import Util from '../../assets/js/util';
 import { Toast  } from 'vant';
 
