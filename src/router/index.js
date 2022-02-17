@@ -6,24 +6,43 @@ import { createRouter, createWebHashHistory } from "vue-router";
 const home = () => import('../views/home.vue');
 const alipay = () => import('../views/alipay/alipay.vue');
 const auth = () => import('../views/auth/auth.vue');
+const book = () => import('../views/book/book.vue');
+const tick = () => import('../views/tick/tick.vue');
 export const routes = [
     {
-      path: '/',
-      name: 'home',
-      component: home,
-      meta: {title: '公共服务'}
+        key:1,
+        path: '/',
+        name: 'home',
+        component: home,
+        meta: {title: '公共服务'}
     },
     {
-      path: '/alipay',
-      name: 'alipay',
-      component: alipay,
-      meta: {title: '公共服务'}
+        key:2,
+        path: '/alipay',
+        name: 'alipay',
+        component: alipay,
+        meta: {title: '公共服务'}
     },
     {
-      path: '/auth',
-      name: 'auth',
-      component: auth,
-      meta: {title: '权限管理',keepAlive: true}
+        key:3,
+        path: '/auth',
+        name: 'auth',
+        component: auth,
+        meta: {title: '权限',keepAlive: true}
+    },
+    {
+        key:4,
+        path: '/book',
+        name: 'book',
+        component: book,
+        meta: {title: '组合式',keepAlive: true}
+    },
+    {
+        key:5,
+        path: '/tick',
+        name: 'tick',
+        component: tick,
+        meta: {title: '冗余',keepAlive: true}
     }
 ]
 

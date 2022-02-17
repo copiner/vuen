@@ -6,11 +6,10 @@ import { router } from './router'
 
 import direct from "./directive/bgcolor";
 
-const render = () =>{
-  const app = createApp(App);
-  app.use(router);
-  app.mount('#app');
-  direct(app);
-}
 
-render()
+const app = createApp(App);
+//app.config.globalProperties.$http = () => {}
+
+app.use(router);
+app.mount('#app');
+direct(app);

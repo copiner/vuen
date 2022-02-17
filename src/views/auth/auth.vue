@@ -27,7 +27,10 @@ export default {
       console.log('created')
     },
     activated(){
-      console.log('activated')
+      console.log('auth activated')
+    },
+    deactivated(){
+      console.log('auth deactivated')
     },
     methods:{
 

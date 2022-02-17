@@ -1,12 +1,10 @@
 <template>
-  <div id="app">
     <router-view v-slot="{ Component }">
-      <keep-alive>
-        <component :is="Component" v-if="$route.meta.keepAlive" />
+      <keep-alive :include=[3,4,5] :max="10">
+        <component :is="Component" :key="Component" v-if="$route.meta.keepAlive" />
       </keep-alive>
       <component :is="Component" v-if="!$route.meta.keepAlive" />
     </router-view>
-  </div>
 </template>
 <script>
 
