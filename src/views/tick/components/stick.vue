@@ -1,5 +1,5 @@
 <template>
-  <div class="stick-content">
+
     <div>{{ stick }}</div>
     <div>---------</div>
     <div>{{ modelValue||"searchTxt" }},{{ title||"title" }},{{ content||"content" }}</div>
@@ -8,7 +8,7 @@
       type="text"
       :value="title"
       @input="$emit('update:title', $event.target.value)">
-  </div>
+
 
 </template>
 
@@ -23,7 +23,7 @@ export default {
     emits: ['update:title'],
     data() {
       return {
-          stick: "tick's child"
+          stick: "tick's child stick"
       }
     }
 }

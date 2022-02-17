@@ -4,10 +4,17 @@
         <div>{{ table }}</div>
         <div>{{ message }}</div>
 
-        <div>{{ searchTx }}</div>
-        <stick v-model="searchTxt" />
+        <div>searchTx: {{ searchTx }}</div>
+        <div>capTxt : {{ capTxt  }}</div>
+        <div class="stick-content">
+            <stick v-model="searchTxt"/>
+            <stick v-model:title="searchTx" v-model:content="pageCnt"/>
+        </div>
 
-        <stick v-model:title="searchTx" v-model:content="pageCnt"/>
+        <div class="otick-content">
+            <otick v-model.capitalize="capTxt"/>
+            <otick v-model:description.capitalize="capTxt"/>
+        </div>
 
 
     </div>
@@ -16,6 +23,7 @@
 <script>
 import { ref, reactive, nextTick } from 'vue'
 import stick from './components/stick.vue'
+import otick from './components/otick.vue'
 /*
 nextTick
 将回调延迟到下次 DOM 更新循环之后执行
@@ -36,14 +44,16 @@ v-model
 
 export default {
     components: {
-        stick
+        stick,
+        otick
     },
     data() {
         return {
           tick: "ticking...",
           searchTxt:"1",
           searchTx:"2",
-          pageCnt:"3"
+          pageCnt:"3",
+          capTxt:"motorcycles"
         }
     },
     mounted(){
@@ -77,5 +87,13 @@ export default {
 <style scoped>
     .tick-content{
         font-size:.20rem;
+
+        & .stick-content{
+            background:#84bf96;
+        }
+
+        & .otick-content{
+            background:#afb4db;
+        }
     }
 </style>
