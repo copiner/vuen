@@ -8,6 +8,9 @@ const alipay = () => import('../views/alipay/alipay.vue');
 const auth = () => import('../views/auth/auth.vue');
 const book = () => import('../views/book/book.vue');
 const tick = () => import('../views/tick/tick.vue');
+const mbook = () => import('../views/book/mbook.vue');
+const ess = () => import('../views/ess/ess.vue');
+
 export const routes = [
     {
         key:1,
@@ -35,7 +38,12 @@ export const routes = [
         path: '/book',
         name: 'book',
         component: book,
-        meta: {title: '组合式',keepAlive: true}
+        meta: {title: '组合式',keepAlive: true},
+        child:{
+            path: '/book/mbook',
+            name: '/book/mbook',
+            component: mbook
+        }
     },
     {
         key:5,
@@ -43,6 +51,13 @@ export const routes = [
         name: 'tick',
         component: tick,
         meta: {title: '冗余',keepAlive: true}
+    },
+    {
+        key:6,
+        path: '/ess',
+        name: 'ess',
+        component: ess,
+        meta: {title: '基础',keepAlive: true}
     }
 ]
 

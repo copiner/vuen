@@ -4,7 +4,7 @@ export default {
   setup(props, { expose }) {
     const reset = () => {
       // 某些重置逻辑
-      console.log("reset")
+      console.log("mbook reset")
     }
 
     // expose 只能被调用一次。
