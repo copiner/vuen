@@ -10,6 +10,7 @@ const book = () => import('../views/book/book.vue');
 const tick = () => import('../views/tick/tick.vue');
 const mbook = () => import('../views/book/mbook.vue');
 const ess = () => import('../views/ess/ess.vue');
+const tpl = () => import('../views/tpl/tpl.vue');
 
 export const routes = [
     {
@@ -50,14 +51,21 @@ export const routes = [
         path: '/tick',
         name: 'tick',
         component: tick,
-        meta: {title: '冗余',keepAlive: true}
+        meta: {title: '冗余',keepAlive: false}
     },
     {
         key:6,
         path: '/ess',
         name: 'ess',
         component: ess,
-        meta: {title: '基础',keepAlive: true}
+        meta: {title: '基础',keepAlive: false}
+    },
+    {
+        key:7,
+        path: '/tpl',
+        name: 'tpl',
+        component: tpl,
+        meta: {title: '模板',keepAlive: false}
     }
 ]
 

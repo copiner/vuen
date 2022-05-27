@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { ref, watch, computed } from 'vue'
+import { ref, onMounted } from 'vue'
 
 // const counter = ref(0)
 // watch(counter, (newValue, oldValue) => {
@@ -57,7 +57,6 @@ export default {
     methods:{
 
     }
-
 }
 </script>
 <style scoped>
