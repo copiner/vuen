@@ -2,7 +2,7 @@
   axios 请求封装
 */
 import axios from 'axios'
-import { Toast } from 'vant';
+// import { Toast } from 'vant';
 // import { v4 as uuidv4 } from 'uuid';
 import Session from '../assets/js/session';
 

@@ -53,16 +53,16 @@ module.exports = {
                    "postcss-loader"
                  ]
            },
-           // {//vant
-           //   test: /\.css$/,
-           //   include: [
-           //     path.resolve(__dirname, '../node_modules/vant'),
-           //   ],
-           //   use: [
-           //       "style-loader",
-           //       'css-loader'
-           //     ]
-           // }
+           {//element-plus
+             test: /\.css$/,
+             include: [
+               path.resolve(__dirname, '../node_modules/element-plus'),
+             ],
+             use: [
+                 "style-loader",
+                 'css-loader'
+               ]
+           }
         ]
     },
     plugins:[
@@ -83,6 +83,7 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         // new BundleAnalyzerPlugin()
+
     ],
     // resolve: {
     //     // 自动补全的扩展名

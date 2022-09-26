@@ -4,7 +4,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 // 懒加载，需要webpack里的插件dynamic-import-webpack配置动态import，以后的es几也会写入
 
 const home = () => import('../views/home.vue');
-const alipay = () => import('../views/alipay/alipay.vue');
+const elplus = () => import('../views/elplus/index.vue');
 const auth = () => import('../views/auth/auth.vue');
 const book = () => import('../views/book/book.vue');
 const tick = () => import('../views/tick/tick.vue');
@@ -21,11 +21,11 @@ export const routes = [
         meta: {title: '公共服务'}
     },
     {
-        key:2,
-        path: '/alipay',
-        name: 'alipay',
-        component: alipay,
-        meta: {title: '公共服务'}
+        key:1,
+        path: '/elplus',
+        name: 'elplus',
+        component: elplus,
+        meta: {title: '样式'}
     },
     {
         key:3,

@@ -42,23 +42,23 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        // exclude: /node_modules/,
+        exclude: /node_modules/,
         use: [
           'style-loader',
           'css-loader',
           "postcss-loader"
         ]
       },
-      // {//vant
-      //   test: /\.css$/,
-      //   include: [
-      //     path.resolve(__dirname, '../node_modules/vant'),
-      //   ],
-      //   use: [
-      //       "style-loader",
-      //       'css-loader'
-      //     ]
-      // }
+      {//element-plus
+        test: /\.css$/,
+        include: [
+          path.resolve(__dirname, '../node_modules/element-plus'),
+        ],
+        use: [
+            "style-loader",
+            'css-loader'
+          ]
+      }
     ]
   },
   plugins: [
@@ -79,6 +79,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new Webpack.NoEmitOnErrorsPlugin(),
     //new BundleAnalyzerPlugin()
+
   ],
   target: "web",//bug
   devServer: {

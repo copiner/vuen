@@ -4,11 +4,7 @@ module.exports = {
   presets: [
     ["@babel/preset-env",{
         targets: {//兼容性处理
-            edge:"17",
-            firefox:"60",
-            chrome:"58",
-            safari:"10",
-            ie: "9"
+            browsers: ["defaults", "not ie 11"]
         },
         corejs: {
           version: 3,
@@ -21,11 +17,6 @@ module.exports = {
   plugins:[
     ["@babel/plugin-transform-runtime",{
       corejs:3
-    }],
-    ['import', {
-     libraryName: 'vant',
-     libraryDirectory: 'es',
-     style: true
-    }, 'vant']
+    }]
   ]
 }
