@@ -8,7 +8,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const env = require('./dev');
 const url = "http://192.168.23.197:8093"
 
-console.log(process.env.NODE_ENV)
 
 module.exports = {
   mode: 'development',
@@ -64,9 +63,7 @@ module.exports = {
   plugins: [
     new Webpack.DefinePlugin({
      // 'SERVICE_URL': JSON.stringify("api"),
-     'process.env': env,
-     '__VUE_OPTIONS_API__': true,
-     '__VUE_PROD_DEVTOOLS__': false
+     'process.env': env
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public/index.html'),
@@ -81,7 +78,7 @@ module.exports = {
     //new BundleAnalyzerPlugin()
 
   ],
-  target: "web",//bug
+  // target: "web",//bug
   devServer: {
     contentBase: path.resolve(__dirname, '../dist'),
     // compress: true,

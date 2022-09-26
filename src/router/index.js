@@ -4,6 +4,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 // 懒加载，需要webpack里的插件dynamic-import-webpack配置动态import，以后的es几也会写入
 
 const home = () => import('../views/home.vue');
+const login = () => import('../views/login/index.vue');
 const elplus = () => import('../views/elplus/index.vue');
 const auth = () => import('../views/auth/auth.vue');
 const book = () => import('../views/book/book.vue');
@@ -21,7 +22,7 @@ export const routes = [
         meta: {title: '公共服务'}
     },
     {
-        key:1,
+        key:2,
         path: '/elplus',
         name: 'elplus',
         component: elplus,
@@ -66,6 +67,13 @@ export const routes = [
         name: 'tpl',
         component: tpl,
         meta: {title: '模板',keepAlive: false}
+    },
+    {
+        key:8,
+        path: '/login',
+        name: 'login',
+        component: login,
+        meta: {title: '登录',keepAlive: false}
     }
 ]
 

@@ -1,7 +1,8 @@
 // webpack.config.js
 const path = require('path');
 const Webpack = require('webpack');
-const { VueLoaderPlugin } = require('vue-loader/dist/index')
+const { VueLoaderPlugin } = require('vue-loader/dist/index');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -40,15 +41,11 @@ module.exports = {
             },
             {
                test: /\.css$/,
-               // exclude: /node_modules/,
+               exclude: /node_modules/,
                use: [
                    MiniCssExtractPlugin.loader,
                    {
-                     loader: 'css-loader',
-                     options: {
-                       // modules: true,
-                       importLoaders: 1,
-                     }
+                     loader: 'css-loader'
                    },
                    "postcss-loader"
                  ]
@@ -56,7 +53,7 @@ module.exports = {
            {//element-plus
              test: /\.css$/,
              include: [
-               path.resolve(__dirname, '../node_modules/element-plus'),
+               path.resolve(__dirname, '../node_modules/element-plus/dist/'),
              ],
              use: [
                  "style-loader",
@@ -67,7 +64,6 @@ module.exports = {
     },
     plugins:[
         new Webpack.DefinePlugin({
-         // 'SERVICE_URL': JSON.stringify("api"),
          'process.env': env
         }),
         new VueLoaderPlugin(),
@@ -85,32 +81,29 @@ module.exports = {
         // new BundleAnalyzerPlugin()
 
     ],
-    // resolve: {
-    //     alias: {
-    //         'vue$': 'vue/dist/vue.esm.js' //内部为正则表达式  vue结尾的
-    //     }
-    // },
-    optimization: {
-      splitChunks: {
-        chunks: 'async',
-        minSize: 20000,
-        minRemainingSize: 0,
-        minChunks: 1,
-        maxAsyncRequests: 30,
-        maxInitialRequests: 30,
-        enforceSizeThreshold: 50000,
-        cacheGroups: {
-          defaultVendors: {
-            test: /[\\/]node_modules[\\/]/,
-            priority: -10,
-            reuseExistingChunk: true,
-          },
-          default: {
-            minChunks: 2,
-            priority: -20,
-            reuseExistingChunk: true,
-          },
-        },
-      }
-   }
+    // optimization: {
+    //
+    //   splitChunks: {
+    //     chunks: 'async',
+    //     minSize: 20000,
+    //     minRemainingSize: 0,
+    //     minChunks: 1,
+    //     maxAsyncRequests: 30,
+    //     maxInitialRequests: 30,
+    //     enforceSizeThreshold: 50000,
+    //     cacheGroups: {
+    //       defaultVendors: {
+    //         test: /[\\/]node_modules[\\/]/,
+    //         priority: -10,
+    //         reuseExistingChunk: true,
+    //       },
+    //       default: {
+    //         minChunks: 2,
+    //         priority: -20,
+    //         reuseExistingChunk: true,
+    //       },
+    //     },
+    //   },
+    //
+    // }
 }

@@ -5,9 +5,10 @@ import Util from '../assets/js/util';
 import Service from './index'
 import API from './api'
 
-let openapi = process.env.ENV == "production" ? "https://xxx/xxx" : "http://xxx/xxx";
+let openapi = process.env.ENV == "production" ? "" : "";
 let appId = process.env.ENV == "production" ? "" : "3070529067680";
 let openId = process.env.ENV == "production" ? "" : "3070529067680";
+
 export default {
 
   subacc:(data)=> Service.post(openapi, {

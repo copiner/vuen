@@ -2,7 +2,7 @@
 boss 系统支付宝转账用户信息录入
 */
 import Util from '../assets/js/util';
-import Service from './index'
+// import Service from './index'
 import API from './api'
 
 export default {
@@ -11,7 +11,7 @@ export default {
   //
   // }),
   bookl: data => {
-      
+
       if(data === 'Jacket'){
           return [
               {id:2,quantity:0,name:"Jacket"},

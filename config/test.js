@@ -1,6 +1,6 @@
 'use strict'
 module.exports = {
-  BASE_API_SEV:'"http://127.0.0.1:8093"',
-  ENV:'"development"',
-  ASSERT_PATH:'"./"'
+  BASE_API_SEV:'/mcapp',
+  ENV:'production',
+  ASSERT_PATH:'./'
 }
