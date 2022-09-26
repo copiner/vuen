@@ -10,7 +10,6 @@ axios.defaults.timeout = 16000;
 axios.defaults.headers['Content-Type'] = 'application/json'
 axios.defaults.baseURL = process.env.BASE_API_SEV;
 
-console.log("process.env", process.env)
 /*
 // Add a request interceptor
 axios.interceptors.request.use(function (config) {

@@ -64,7 +64,9 @@ module.exports = {
     },
     plugins:[
         new Webpack.DefinePlugin({
-         'process.env': env
+         'process.env': JSON.stringify(env),
+         '__VUE_OPTIONS_API__': true,
+         '__VUE_PROD_DEVTOOLS__': false
         }),
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
@@ -81,29 +83,29 @@ module.exports = {
         // new BundleAnalyzerPlugin()
 
     ],
-    // optimization: {
-    //
-    //   splitChunks: {
-    //     chunks: 'async',
-    //     minSize: 20000,
-    //     minRemainingSize: 0,
-    //     minChunks: 1,
-    //     maxAsyncRequests: 30,
-    //     maxInitialRequests: 30,
-    //     enforceSizeThreshold: 50000,
-    //     cacheGroups: {
-    //       defaultVendors: {
-    //         test: /[\\/]node_modules[\\/]/,
-    //         priority: -10,
-    //         reuseExistingChunk: true,
-    //       },
-    //       default: {
-    //         minChunks: 2,
-    //         priority: -20,
-    //         reuseExistingChunk: true,
-    //       },
-    //     },
-    //   },
-    //
-    // }
+    optimization: {
+
+      splitChunks: {
+        chunks: 'async',
+        minSize: 20000,
+        minRemainingSize: 0,
+        minChunks: 1,
+        maxAsyncRequests: 30,
+        maxInitialRequests: 30,
+        enforceSizeThreshold: 50000,
+        cacheGroups: {
+          defaultVendors: {
+            test: /[\\/]node_modules[\\/]/,
+            priority: -10,
+            reuseExistingChunk: true,
+          },
+          default: {
+            minChunks: 2,
+            priority: -20,
+            reuseExistingChunk: true,
+          },
+        },
+      },
+
+    }
 }

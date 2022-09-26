@@ -62,8 +62,9 @@ module.exports = {
   },
   plugins: [
     new Webpack.DefinePlugin({
-     // 'SERVICE_URL': JSON.stringify("api"),
-     'process.env': env
+      '__VUE_OPTIONS_API__': true,
+      '__VUE_PROD_DEVTOOLS__': false,
+     'process.env': JSON.stringify(env)
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public/index.html'),
